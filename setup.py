@@ -22,7 +22,13 @@ setup(name='gocept.package',
         'distribute',
       ],
       extras_require=dict(
-        doc=[],
+        doc=[
+            'Sphinx',
+        ],
+        test=[
+            'gocept.testing',
+            'unittest2',
+        ],
       ),
       entry_points=dict(
         console_scripts=[
