@@ -24,6 +24,7 @@ setup(name='gocept.package',
       extras_require=dict(
         doc=[
             'Sphinx',
+            'pkginfo',
         ],
         test=[
             'gocept.testing',

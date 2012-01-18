@@ -5,6 +5,8 @@ import gocept.package.doc
 import gocept.testing.assertion
 import os.path
 import shutil
+import subprocess
+import sys
 import tempfile
 import unittest2 as unittest
 
@@ -28,6 +30,16 @@ class DocBuildEndtoend(unittest.TestCase, gocept.testing.assertion.Ellipsis):
             f.write(contents)
 
     def test_should_generate_documentation(self):
+        self.write('setup.py', """\
+from setuptools import setup
+
+setup(
+    name='testpackage',
+    version='1.0',
+    author='Author',
+)
+""")
+        subprocess.call([sys.executable, 'setup.py', 'egg_info'])
         self.mkdir('doc')
         self.write('doc/conf.py', 'from gocept.package.sphinxconf import *')
         self.write('doc/index.txt', 'foo and bar and qux')
