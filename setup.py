@@ -1,0 +1,32 @@
+# Copyright (c) 2012 gocept gmbh & co. kg
+# See also LICENSE.txt
+
+from setuptools import setup, find_packages
+
+
+setup(name='gocept.package',
+      version='1.0dev',
+      description="gocept Python package conventions",
+      long_description="""\
+""",
+      author="gocept",
+      author_email="mail@gocept.com",
+      url="http://gocept.com/",
+      license="gocept proprietary",
+      packages=find_packages('src'),
+      package_dir={'': 'src'},
+      include_package_data=True,
+      zip_safe=False,
+      namespace_packages=['gocept'],
+      install_requires=[
+        'distribute',
+      ],
+      extras_require=dict(
+        doc=[],
+      ),
+      entry_points=dict(
+        console_scripts=[
+            'doc=gocept.package.doc:main',
+            ],
+        ),
+      )

@@ -1,0 +1,8 @@
+syntax: glob
+
+bin
+build
+develop-eggs
+eggs
+.installed.cfg
+parts
