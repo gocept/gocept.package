@@ -21,11 +21,11 @@ setup(name='gocept.package',
       install_requires=[
         'PasteScript',
         'distribute',
+        'pkginfo',
       ],
       extras_require=dict(
         doc=[
             'Sphinx',
-            'pkginfo',
         ],
         test=[
             'gocept.testing',

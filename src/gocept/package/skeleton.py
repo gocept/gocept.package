@@ -5,6 +5,7 @@ from paste.script.templates import var
 import datetime
 import paste.script.templates
 import paste.util.template
+import pkginfo
 
 
 class Skeleton(paste.script.templates.Template):
@@ -24,9 +25,14 @@ class Skeleton(paste.script.templates.Template):
         return '%s\n%s' % (text, '='*len(text))
 
     def pre(self, command, output_dir, vars):
-        vars['namespace'], vars['package'] = vars['egg'].split('.')
-        vars['year'] = datetime.date.today().year
-        vars['underline_double'] = self.underline_double
+        namespace, package = vars['egg'].split('.')
+        vars.update(
+            namespace=namespace,
+            package=package,
+            year=datetime.date.today().year,
+            underline_double=self.underline_double,
+            gocept_package_version=pkginfo.Installed('gocept.package').version,
+            )
 
     def post(self, command, output_dir, vars):
         pass

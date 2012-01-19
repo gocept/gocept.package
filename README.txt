@@ -14,7 +14,7 @@ Usage
 To use the Sphinx configuration, add a zc.buildout section like this:
 
 ::
-    [docs]
+    [doc]
     recipe = zc.recipe.egg
     eggs = gocept.package [doc]
 
