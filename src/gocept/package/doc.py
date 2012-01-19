@@ -9,4 +9,5 @@ def main():
     sphinx_build = pkg_resources.load_entry_point(
         'Sphinx', 'console_scripts', 'sphinx-build')
     sphinx_build(
-        ['sphinx-build'] + [os.getcwd() + x for x in ['/doc', '/build/doc']])
+        ['sphinx-build', '-E'] +
+        [os.getcwd() + x for x in ['/doc', '/build/doc']])
