@@ -20,9 +20,13 @@ class Skeleton(paste.script.templates.Template):
     vars = [
     ]
 
+    def underline_double(self, text):
+        return '%s\n%s' % (text, '='*len(text))
+
     def pre(self, command, output_dir, vars):
         vars['namespace'], vars['package'] = vars['egg'].split('.')
         vars['year'] = datetime.date.today().year
+        vars['underline_double'] = self.underline_double
 
     def post(self, command, output_dir, vars):
         pass
