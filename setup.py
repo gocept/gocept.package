@@ -19,6 +19,7 @@ setup(name='gocept.package',
       zip_safe=False,
       namespace_packages=['gocept'],
       install_requires=[
+        'PasteScript',
         'distribute',
       ],
       extras_require=dict(
@@ -31,9 +32,12 @@ setup(name='gocept.package',
             'unittest2',
         ],
       ),
-      entry_points=dict(
-        console_scripts=[
+      entry_points={
+        'console_scripts': [
             'doc=gocept.package.doc:main',
             ],
-        ),
+        'paste.paster_create_template': [
+            'gocept_package = gocept.package.skeleton:Skeleton'
+            ],
+        },
       )
