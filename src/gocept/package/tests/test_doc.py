@@ -17,6 +17,16 @@ class DocBuildEndtoend(unittest.TestCase, gocept.testing.assertion.Ellipsis):
         self.tmpdir = tempfile.mkdtemp()
         self.cwd = os.getcwd()
         os.chdir(self.tmpdir)
+        self.write('setup.py', """\
+from setuptools import setup
+
+setup(
+    name='testpackage',
+    version='1.0',
+    author='Author',
+)
+""")
+        subprocess.call([sys.executable, 'setup.py', 'egg_info'])
 
     def tearDown(self):
         os.chdir(self.cwd)
@@ -30,21 +40,42 @@ class DocBuildEndtoend(unittest.TestCase, gocept.testing.assertion.Ellipsis):
             f.write(contents)
 
     def test_should_generate_documentation(self):
-        self.write('setup.py', """\
-from setuptools import setup
-
-setup(
-    name='testpackage',
-    version='1.0',
-    author='Author',
-)
-""")
-        subprocess.call([sys.executable, 'setup.py', 'egg_info'])
         self.mkdir('doc')
-        self.write('doc/conf.py', 'from gocept.package.sphinxconf import *')
+        self.write('doc/conf.py', """\
+import gocept.package.sphinxconf
+gocept.package.sphinxconf.set_defaults()
+""")
         self.write('doc/index.txt', 'foo and bar and qux')
         gocept.package.doc.main()
         index_html = os.path.join(self.tmpdir, 'build/doc/index.html')
         self.assertTrue(os.path.isfile(index_html))
         contents = open(index_html).read()
         self.assertEllipsis('...foo and bar and qux...', contents)
+
+    def test_variables_from_confpy_are_available_in_sphinxconf_module(self):
+        self.mkdir('doc')
+        self.write('doc/conf.py', """\
+_year_started = 2000
+
+import gocept.package.sphinxconf
+gocept.package.sphinxconf.set_defaults()
+        """)
+        self.write('doc/index.txt', 'foo and bar and qux')
+        gocept.package.doc.main()
+        index_html = os.path.join(self.tmpdir, 'build/doc/index.html')
+        contents = open(index_html).read()
+        self.assertEllipsis('...Copyright 2000-2...', contents)
+
+    def test_defaults_from_sphinxconf_should_not_override_confpy(self):
+        self.mkdir('doc')
+        self.write('doc/conf.py', """\
+release = '2.0beta'
+
+import gocept.package.sphinxconf
+gocept.package.sphinxconf.set_defaults()
+        """)
+        self.write('doc/index.txt', 'foo and bar and qux')
+        gocept.package.doc.main()
+        index_html = os.path.join(self.tmpdir, 'build/doc/index.html')
+        contents = open(index_html).read()
+        self.assertEllipsis('...testpackage v2.0beta...', contents)

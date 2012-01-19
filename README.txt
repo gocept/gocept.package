@@ -26,7 +26,8 @@ documentation into build/doc/ (also relative to your working directory).
 Also, there needs to exists a Sphinx configuration file at doc/conf.py:
 
 ::
-    from gocept.package.sphinxconf import *
+    import gocept.package.sphinxconf
+    gocept.package.sphinxconf.set_defaults()
 
 To make the paster template available, install gocept.package where paster can
 find it (ignoring the doc extra). Then run paster:
@@ -35,3 +36,22 @@ find it (ignoring the doc extra). Then run paster:
     $ paster create --template gocept_package NAMESPACE.PROJECTNAME
 
 The template will generate buildout.cfg and doc/conf.py files as above.
+
+
+Sphinx configuration values
+===========================
+
+You can override the defaults from gocept.package by simply setting the
+respective variables in your conf.py:
+
+::
+    source_suffix = '.foo'
+    import gocept.package.sphinxconf
+    gocept.package.sphinxconf.set_defaults()
+
+Conversely, sphinxconf uses some variables from conf.py (if present) to
+calculate some values:
+
+:_year_started:
+    If different from the current year, used to set a copyright notice like
+    "2001-2012 Author"

@@ -1,6 +1,8 @@
 # Copyright (c) 2012 gocept gmbh & co. kg
 # See also LICENSE.txt
 
-from gocept.package.sphinxconf import *
 
 _year_started = {{year}}
+
+import gocept.package.sphinxconf
+gocept.package.sphinxconf.set_defaults()

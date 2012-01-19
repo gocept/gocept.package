@@ -3,35 +3,43 @@
 
 import datetime
 import pkginfo
+import sys
 
 
-_dist = pkginfo.Develop('..')
-project = _dist.name
+def set_defaults():
+    _confpy = sys._getframe(1).f_locals
 
-release = _dist.version
-version = []
-for x in release:
-    try:
-        version.append(str(int(x)))
-    except ValueError:
-        break
-version = '.'.join(version)
+    _dist = pkginfo.Develop('..')
+    project = _dist.name
 
-_year = datetime.date.today().year
-_year_started = _year # overriden by paster template
-if _year != _year_started:
-    _year = u'%s-%s' (_year_started, _year)
-copyright = u'%s %s' % (_year, _dist.author)
+    release = _dist.version
+    version = []
+    for x in release:
+        try:
+            version.append(str(int(x)))
+        except ValueError:
+            break
+    version = '.'.join(version)
 
-source_suffix = '.txt'
-master_doc = 'index'
+    _year = datetime.date.today().year
+    _year_started = _confpy.get('_year_started', _year)
+    if str(_year) != str(_year_started):
+        _year = u'%s-%s' % (_year_started, _year)
+    copyright = u'%s %s' % (_year, _dist.author)
 
-needs_sphinx = '1.0'
-extensions = []
+    source_suffix = '.txt'
+    master_doc = 'index'
 
-#html_theme = 'gocept' # XXX not yet implemented
-sidebars = {
-    '**': ['globaltoc.html', 'searchbox.html']
-}
-pygments_style = 'sphinx'
-html_show_source_link = False
+    needs_sphinx = '1.0'
+    extensions = []
+
+    #html_theme = 'gocept' # XXX not yet implemented
+    sidebars = {
+        '**': ['globaltoc.html', 'searchbox.html']
+    }
+    pygments_style = 'sphinx'
+    html_show_source_link = False
+
+    for key, value in locals().items():
+        if key not in _confpy:
+            _confpy[key] = value
