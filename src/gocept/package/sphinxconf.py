@@ -3,6 +3,7 @@
 
 import datetime
 import pkginfo
+import pkg_resources
 import sys
 
 
@@ -33,11 +34,17 @@ def set_defaults():
     needs_sphinx = '1.0'
     extensions = []
 
-    #html_theme = 'gocept' # XXX not yet implemented
+    html_theme_path = [
+        pkg_resources.resource_filename('gocept.package', 'themes')]
+    html_theme = 'gocept'
+
     sidebars = {
         '**': ['globaltoc.html', 'searchbox.html']
     }
-    pygments_style = 'sphinx'
+    html_logo = pkg_resources.resource_filename(
+        'gocept.package', 'themes/gocept/static/gocept.png')
+    html_favicon = pkg_resources.resource_filename(
+        'gocept.package', 'themes/gocept/static/favicon.ico')
     html_show_sourcelink = False
 
     for key, value in locals().items():
