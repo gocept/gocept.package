@@ -9,7 +9,7 @@ import sys
 def set_defaults():
     _confpy = sys._getframe(1).f_locals
 
-    _dist = pkginfo.Develop('..')
+    _dist = pkginfo.Develop('../src/')
     project = _dist.name
 
     release = _dist.version
@@ -38,7 +38,7 @@ def set_defaults():
         '**': ['globaltoc.html', 'searchbox.html']
     }
     pygments_style = 'sphinx'
-    html_show_source_link = False
+    html_show_sourcelink = False
 
     for key, value in locals().items():
         if key not in _confpy:
