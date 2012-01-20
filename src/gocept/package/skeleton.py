@@ -8,6 +8,8 @@ import os.path
 import paste.script.templates
 import paste.util.template
 import pkginfo
+import shutil
+import subprocess
 
 
 class Skeleton(paste.script.templates.Template):
@@ -41,3 +43,6 @@ class Skeleton(paste.script.templates.Template):
     def post(self, command, output_dir, vars):
         os.rename(os.path.join(output_dir, 'hgignore'),
                   os.path.join(output_dir, '.hgignore'))
+        subprocess.call(['hg', 'init', output_dir])
+        shutil.move(os.path.join(output_dir, 'hgrc'),
+                    os.path.join(output_dir, '.hg'))
