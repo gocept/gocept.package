@@ -4,6 +4,8 @@ gocept.package
 
 This package is to express our conventions for Python packages.
 
+.. contents:: :depth: 1
+
 It consists of two parts: a Python module that is used to configure Sphinx,
 along with the necessary package dependencies, and a paster template that
 creates the boilerplate for a Python package in the first place.
@@ -11,9 +13,8 @@ creates the boilerplate for a Python package in the first place.
 Usage
 =====
 
-To use the Sphinx configuration, add a zc.buildout section like this:
+To use the Sphinx configuration, add a zc.buildout section like this::
 
-::
     [doc]
     recipe = zc.recipe.egg
     eggs = gocept.package [doc]
@@ -24,16 +25,14 @@ subdirectory doc/ of your current working directory and it will put the built
 documentation into build/doc/ (also relative to your working directory).
 (Arguments passed to bin/doc will be passed on to the sphinx-build command)
 
-Also, there needs to exists a Sphinx configuration file at doc/conf.py:
+Also, there needs to exists a Sphinx configuration file at doc/conf.py::
 
-::
     import gocept.package.sphinxconf
     gocept.package.sphinxconf.set_defaults()
 
 To make the paster template available, install gocept.package where paster can
-find it (ignoring the doc extra). Then run paster:
+find it (ignoring the doc extra). Then run paster::
 
-::
     $ paster create --template gocept_package NAMESPACE.PROJECTNAME
 
 The template will generate buildout.cfg and doc/conf.py files as above.
@@ -43,9 +42,8 @@ Sphinx configuration values
 ===========================
 
 You can override the defaults from gocept.package by simply setting the
-respective variables in your conf.py:
+respective variables in your conf.py::
 
-::
     import gocept.package.sphinxconf
     source_suffix = '.foo'
     gocept.package.sphinxconf.set_defaults()
@@ -59,3 +57,12 @@ calculate some values:
 
 Note that both kinds of variables need to be set _before_ calling
 ``set_defaults()``.
+
+Development
+===========
+
+The source code is available in the mercurial repository at
+https://code.gocept.com/hg/public/gocept.package
+
+Please report any bugs you find at
+https://projects.gocept.com/projects/gocept.package/issues

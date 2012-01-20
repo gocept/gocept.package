@@ -7,12 +7,14 @@ from setuptools import setup, find_packages
 setup(name='gocept.package',
       version='1.0dev',
       description="gocept Python package conventions",
-      long_description="""\
-""",
-      author="gocept",
+    long_description=(
+        open('README.txt').read()
+        + '\n\n'
+        + open('CHANGES.txt').read()),
+      author="Thomas Lotze <tl at gocept dot com> and Wolfgang Schnerring <ws at gocept dot com>",
       author_email="mail@gocept.com",
       url="http://gocept.com/",
-      license="gocept proprietary",
+      license="ZPL",
       packages=find_packages('src'),
       package_dir={'': 'src'},
       include_package_data=True,
