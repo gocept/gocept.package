@@ -1,12 +1,10 @@
-{{egg |underline_double}}
+.. include:: ../README.txt
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 2
 
+    about
+    changes
 
-Indices and tables
-==================
 
 - :ref:`genindex`
-- :ref:`modindex`
-- :ref:`search`

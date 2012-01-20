@@ -3,6 +3,8 @@
 
 from paste.script.templates import var
 import datetime
+import os
+import os.path
 import paste.script.templates
 import paste.util.template
 import pkginfo
@@ -19,10 +21,12 @@ class Skeleton(paste.script.templates.Template):
         paste.util.template.paste_script_template_renderer)
 
     vars = [
+        var("description", "One-line description of the package"),
+        var("keywords", "Space-separated keywords/tags"),
     ]
 
     def underline_double(self, text):
-        return '%s\n%s' % (text, '='*len(text))
+        return '='*len(text)
 
     def pre(self, command, output_dir, vars):
         namespace, package = vars['egg'].split('.')
@@ -35,4 +39,5 @@ class Skeleton(paste.script.templates.Template):
             )
 
     def post(self, command, output_dir, vars):
-        pass
+        os.rename(os.path.join(output_dir, 'hgignore'),
+                  os.path.join(output_dir, '.hgignore'))
