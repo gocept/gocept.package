@@ -22,6 +22,7 @@ This installs a console script bin/doc which you can run to build your Sphinx
 docs. The script assumes that the documentation source is inside a
 subdirectory doc/ of your current working directory and it will put the built
 documentation into build/doc/ (also relative to your working directory).
+(Arguments passed to bin/doc will be passed on to the sphinx-build command)
 
 Also, there needs to exists a Sphinx configuration file at doc/conf.py:
 
