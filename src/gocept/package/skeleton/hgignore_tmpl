@@ -1,0 +1,10 @@
+.installed.cfg
+bin
+build
+develop-eggs
+dist
+doc/{{egg}}*
+eggs
+local.cfg
+parts
+setuptools_hg-*
