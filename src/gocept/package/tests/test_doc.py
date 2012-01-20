@@ -17,6 +17,7 @@ class DocBuildEndtoend(unittest.TestCase, gocept.testing.assertion.Ellipsis):
         self.tmpdir = tempfile.mkdtemp()
         self.cwd = os.getcwd()
         os.chdir(self.tmpdir)
+        self.mkdir('src')
         self.write('setup.py', """\
 from setuptools import setup
 
@@ -24,6 +25,7 @@ setup(
     name='testpackage',
     version='1.0',
     author='Author',
+    package_dir={'': 'src'},
 )
 """)
         subprocess.call([sys.executable, 'setup.py', 'egg_info'])
