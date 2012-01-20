@@ -57,9 +57,9 @@ gocept.package.sphinxconf.set_defaults()
     def test_variables_from_confpy_are_available_in_sphinxconf_module(self):
         self.mkdir('doc')
         self.write('doc/conf.py', """\
-_year_started = 2000
-
 import gocept.package.sphinxconf
+
+_year_started = 2000
 gocept.package.sphinxconf.set_defaults()
         """)
         self.write('doc/index.txt', 'foo and bar and qux')
@@ -71,9 +71,9 @@ gocept.package.sphinxconf.set_defaults()
     def test_defaults_from_sphinxconf_should_not_override_confpy(self):
         self.mkdir('doc')
         self.write('doc/conf.py', """\
-release = '2.0beta'
-
 import gocept.package.sphinxconf
+
+release = '2.0beta'
 gocept.package.sphinxconf.set_defaults()
         """)
         self.write('doc/index.txt', 'foo and bar and qux')

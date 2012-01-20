@@ -46,8 +46,8 @@ You can override the defaults from gocept.package by simply setting the
 respective variables in your conf.py:
 
 ::
-    source_suffix = '.foo'
     import gocept.package.sphinxconf
+    source_suffix = '.foo'
     gocept.package.sphinxconf.set_defaults()
 
 Conversely, sphinxconf uses some variables from conf.py (if present) to
@@ -56,3 +56,6 @@ calculate some values:
 :_year_started:
     If different from the current year, used to set a copyright notice like
     "2001-2012 Author"
+
+Note that both kinds of variables need to be set _before_ calling
+``set_defaults()``.
