@@ -38,8 +38,8 @@ def set_defaults():
         pkg_resources.resource_filename('gocept.package', 'themes')]
     html_theme = 'gocept'
 
-    sidebars = {
-        '**': ['globaltoc.html', 'searchbox.html']
+    html_sidebars = {
+        '**': ['project-links.html', 'globaltoc.html', 'searchbox.html']
     }
     html_logo = pkg_resources.resource_filename(
         'gocept.package', 'themes/gocept/static/gocept.png')
