@@ -4,6 +4,7 @@ extends =
 parts =
     doc
     test
+develop = .
 versions = versions
 allow-picked-versions = false
 
