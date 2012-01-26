@@ -7,26 +7,29 @@ import pkg_resources
 import sys
 
 
-def set_defaults():
+def set_defaults(egg=True):
     _confpy = sys._getframe(1).f_locals
 
-    _dist = pkginfo.Develop('../src/')
-    project = _dist.name
+    author = 'gocept'
+    if egg:
+        _dist = pkginfo.Develop('../src/')
+        project = _dist.name
+        author = _dist.author
 
-    release = _dist.version
-    version = []
-    for x in release:
-        try:
-            version.append(str(int(x)))
-        except ValueError:
-            break
-    version = '.'.join(version)
+        release = _dist.version
+        version = []
+        for x in release:
+            try:
+                version.append(str(int(x)))
+            except ValueError:
+                break
+        version = '.'.join(version)
 
     _year = datetime.date.today().year
     _year_started = _confpy.get('_year_started', _year)
     if str(_year) != str(_year_started):
         _year = u'%s-%s' % (_year_started, _year)
-    copyright = u'%s %s' % (_year, _dist.author)
+    copyright = u'%s %s' % (_year, author)
 
     source_suffix = '.txt'
     master_doc = 'index'
