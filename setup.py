@@ -16,7 +16,7 @@ install_requires = [
 
 extras_require = {
     'doc': [
-        'Sphinx',
+        'Sphinx>=1.0',
         ],
     'test': [
         'gocept.testing',
