@@ -1,3 +1,5 @@
+syntax: glob
+
 .installed.cfg
 bin
 build
@@ -7,4 +9,3 @@ doc/{{egg}}*
 eggs
 local.cfg
 parts
-setuptools_hg-*
