@@ -5,4 +5,4 @@ API Reference
 .. autosummary::
     :toctree: ./
 
-    {{egg}}.foo
+..  {{egg}}.foo

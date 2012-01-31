@@ -21,8 +21,6 @@
    Classes
    -------
 
-   .. inheritance-diagram:: {{ fullname }}
-
    {% for item in classes %}
    .. autoclass:: {{ item }}
        :members:
