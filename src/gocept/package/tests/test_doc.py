@@ -80,3 +80,17 @@ gocept.package.sphinxconf.set_defaults()
         index_html = os.path.join(self.tmpdir, 'build/doc/index.html')
         contents = open(index_html).read()
         self.assertEllipsis('...testpackage v2.0beta...', contents)
+
+    def test_command_line_arguments_are_passed_to_sphinx_build(self):
+        self.write('doc/conf.py', """\
+import gocept.package.sphinxconf
+
+release = '2.0beta'
+gocept.package.sphinxconf.set_defaults()
+        """)
+        self.write('doc/index.txt', 'foo and bar and qux')
+        gocept.package.doc.main(
+            ['doc', '-D', 'release=3.1.4', '-E', 'doc', 'build/doc'])
+        index_html = os.path.join(self.tmpdir, 'build/doc/index.html')
+        contents = open(index_html).read()
+        self.assertEllipsis('...testpackage v3.1.4...', contents)
