@@ -9,6 +9,8 @@ import glob
 import os.path
 
 
+keywords = '{{keywords}}'
+
 install_requires = [
     'distribute',
     ]
@@ -44,6 +46,7 @@ setup(name='{{egg}}',
       version='0.1.dev0',
       description=__doc__.strip(),
       long_description=longdesc,
+      keywords=keywords,
       author="gocept <mail@gocept.com>",
       author_email="mail@gocept.com",
       url="https://projects.gocept.com/projects/{{namespace}}-{{package}}/",

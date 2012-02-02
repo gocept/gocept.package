@@ -9,6 +9,8 @@ import glob
 import os.path
 
 
+keywords = 'paste.script paster create template python package sphinx theme'
+
 install_requires = [
     'PasteScript',
     'distribute',
@@ -57,6 +59,7 @@ setup(name='gocept.package',
       version='1.0.dev0',
       description=__doc__.strip(),
       long_description=longdesc,
+      keywords=keywords,
       author='Thomas Lotze <tl at gocept dot com> and Wolfgang Schnerring <ws at gocept dot com>',
       author_email="mail@gocept.com",
       url="https://projects.gocept.com/projects/gocept-package/",
