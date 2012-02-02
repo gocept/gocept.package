@@ -5,6 +5,7 @@
 """
 
 from setuptools import setup, find_packages
+import glob
 import os.path
 
 
@@ -36,6 +37,8 @@ longdesc = '\n\n'.join((open(project_path('README.txt')).read(),
                         open(project_path('HACKING.txt')).read(),
                         open(project_path('CHANGES.txt')).read()))
 
+data_files = [("", glob.glob(project_path("*.txt")))]
+
 
 setup(name='{{egg}}',
       version='0.1.dev0',
@@ -48,6 +51,7 @@ setup(name='{{egg}}',
       packages=find_packages('src'),
       package_dir={'': 'src'},
       include_package_data=True,
+      data_files=data_files,
       zip_safe=False,
       namespace_packages=['{{namespace}}'],
       install_requires=install_requires,

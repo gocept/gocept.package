@@ -5,6 +5,7 @@
 """
 
 from setuptools import setup, find_packages
+import glob
 import os.path
 
 
@@ -49,6 +50,8 @@ longdesc = '\n\n'.join((open(project_path('README.txt')).read(),
                         open(project_path('HACKING.txt')).read(),
                         open(project_path('CHANGES.txt')).read()))
 
+data_files = [("", glob.glob(project_path("*.txt")))]
+
 
 setup(name='gocept.package',
       version='1.0.dev0',
@@ -61,6 +64,7 @@ setup(name='gocept.package',
       packages=find_packages('src'),
       package_dir={'': 'src'},
       include_package_data=True,
+      data_files=data_files,
       zip_safe=False,
       namespace_packages=['gocept'],
       install_requires=install_requires,
