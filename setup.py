@@ -5,8 +5,11 @@
 """
 
 from setuptools import setup, find_packages
+import glob
 import os.path
 
+
+keywords = 'paste.script paster create template python package sphinx theme'
 
 install_requires = [
     'PasteScript',
@@ -16,7 +19,7 @@ install_requires = [
 
 extras_require = {
     'doc': [
-        'Sphinx',
+        'Sphinx>=1.0',
         ],
     'test': [
         'gocept.testing',
@@ -49,11 +52,14 @@ longdesc = '\n\n'.join((open(project_path('README.txt')).read(),
                         open(project_path('HACKING.txt')).read(),
                         open(project_path('CHANGES.txt')).read()))
 
+data_files = [("", glob.glob(project_path("*.txt")))]
+
 
 setup(name='gocept.package',
       version='1.0.dev0',
       description=__doc__.strip(),
       long_description=longdesc,
+      keywords=keywords,
       author='Thomas Lotze <tl at gocept dot com> and Wolfgang Schnerring <ws at gocept dot com>',
       author_email="mail@gocept.com",
       url="https://projects.gocept.com/projects/gocept-package/",
@@ -61,6 +67,7 @@ setup(name='gocept.package',
       packages=find_packages('src'),
       package_dir={'': 'src'},
       include_package_data=True,
+      data_files=data_files,
       zip_safe=False,
       namespace_packages=['gocept'],
       install_requires=install_requires,

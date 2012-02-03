@@ -35,7 +35,11 @@ def set_defaults(egg=True):
     master_doc = 'index'
 
     needs_sphinx = '1.0'
-    extensions = []
+    extensions = [
+        'sphinx.ext.autosummary',
+        ]
+
+    autosummary_generate = ['api.txt']
 
     html_theme_path = [
         pkg_resources.resource_filename('gocept.package', 'themes')]
