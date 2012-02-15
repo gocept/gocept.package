@@ -1,15 +1,10 @@
 [buildout]
-extends =
-    http://download.zope.org/zopetoolkit/index/1.1.3/ztk-versions.cfg
+extends = versions/versions.cfg
 parts =
     doc
     test
 develop = .
-versions = versions
 allow-picked-versions = false
-
-[versions]
-gocept.package = {{gocept_package_version}}
 
 [doc]
 recipe = zc.recipe.egg
