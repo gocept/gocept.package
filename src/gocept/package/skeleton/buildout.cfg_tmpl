@@ -10,6 +10,7 @@ allow-picked-versions = false
 
 [versions]
 gocept.package = {{gocept_package_version}}
+pkginfo = 0.8
 
 [doc]
 recipe = zc.recipe.egg
