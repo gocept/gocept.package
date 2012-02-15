@@ -9,8 +9,6 @@ import glob
 import os.path
 
 
-keywords = '{{keywords}}'
-
 install_requires = [
     'distribute',
     ]
@@ -31,6 +29,8 @@ Programming Language :: Python :: 2.6
 Programming Language :: Python :: 2.7
 Programming Language :: Python :: 2 :: Only
 """[:-1].split('\n')
+
+keywords = '{{keywords}}'
 
 
 project_path = lambda *names: os.path.join(os.path.dirname(__file__), *names)
