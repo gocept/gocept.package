@@ -35,8 +35,10 @@ class SkeletonSetUp(unittest.TestCase):
             pass
 
     def content(self, rel_path):
-        return open(os.path.join(
-                self.tmpdir, 'gocept.example', *rel_path.split('/'))).read()
+        file_path = os.path.join(
+            self.tmpdir, 'gocept.example', *rel_path.split('/'))
+        self.assertTrue(os.path.isfile(file_path))
+        return open(file_path).read()
 
 
 class Skeleton(SkeletonSetUp):
