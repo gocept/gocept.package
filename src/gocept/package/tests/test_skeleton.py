@@ -43,6 +43,10 @@ class Skeleton(unittest.TestCase):
         self.assertIn(
             str(datetime.date.today().year), self.content('COPYRIGHT.txt'))
 
+    def test_hg_init_has_been_run(self):
+        self.expand_template()
+        self.assertTrue(os.path.isdir(os.path.join('gocept.example', '.hg')))
+
     def test_setup_py_is_functional(self):
         # paster detects setup.py and creates egg-info from it
         self.expand_template()
