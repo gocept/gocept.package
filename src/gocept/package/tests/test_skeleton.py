@@ -7,11 +7,13 @@ import os
 import os.path
 import paste.script.command
 import shutil
+import subprocess
+import sys
 import tempfile
 import unittest
 
 
-class Skeleton(unittest.TestCase):
+class SkeletonSetUp(unittest.TestCase):
 
     def setUp(self):
         self.cwd = os.getcwd()
@@ -36,6 +38,9 @@ class Skeleton(unittest.TestCase):
         return open(os.path.join(
                 self.tmpdir, 'gocept.example', *rel_path.split('/'))).read()
 
+
+class Skeleton(SkeletonSetUp):
+
     def test_expanding_template_creates_files(self):
         self.expand_template()
         self.assertEqual(
@@ -58,3 +63,20 @@ class Skeleton(unittest.TestCase):
         os.chdir('gocept.example')
         gocept.package.doc.main(['doc'])
         self.assertIn('<html', self.content('build/doc/index.html'))
+
+
+class Buildout(SkeletonSetUp):
+
+    level = 2
+
+    def setUp(self):
+        super(Buildout, self).setUp()
+        self.expand_template()
+        os.chdir('gocept.example')
+
+    def test_bootstrap_succeeds_using_distribute_by_default(self):
+        subprocess.call([sys.executable, 'bootstrap.py'])
+        bin_buildout = self.content('bin/buildout')
+        self.assertIn(sys.executable, bin_buildout)
+        self.assertIn('distribute-', bin_buildout)
+        self.assertNotIn('setuptools-', bin_buildout)
