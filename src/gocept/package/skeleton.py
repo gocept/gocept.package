@@ -28,7 +28,7 @@ class Skeleton(paste.script.templates.Template):
     ]
 
     def underline_double(self, text):
-        return '='*len(text)
+        return '=' * len(text)
 
     def pre(self, command, output_dir, vars):
         namespace, package = vars['egg'].split('.')
