@@ -7,6 +7,7 @@ import gocept.package.doc
 import os
 import os.path
 import paste.script.command
+import pkg_resources
 import shutil
 import subprocess
 import sys
@@ -50,6 +51,12 @@ class Skeleton(SkeletonSetUp):
             '', self.content('src/gocept/example/tests/__init__.py'))
         self.assertIn(
             str(datetime.date.today().year), self.content('COPYRIGHT.txt'))
+
+    def test_package_has_gocept_package_version_pinned_to_active(self):
+        self.expand_template()
+        gocept_package = pkg_resources.get_distribution('gocept.package')
+        self.assertIn('gocept.package = %s\n' % gocept_package.version,
+                      self.content('versions/versions.cfg'))
 
     def test_hg_init_has_been_run(self):
         self.expand_template()
