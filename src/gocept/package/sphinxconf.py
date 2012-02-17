@@ -2,8 +2,9 @@
 # See also LICENSE.txt
 
 import datetime
-import pkginfo
+import os.path
 import pkg_resources
+import pkginfo
 import sys
 
 
@@ -12,7 +13,7 @@ def set_defaults(egg=True):
 
     author = 'gocept'
     if egg:
-        _dist = pkginfo.Develop('../src/')
+        _dist = pkginfo.Develop(os.path.join('..', 'src'))
         project = _dist.name
         author = _dist.author
 

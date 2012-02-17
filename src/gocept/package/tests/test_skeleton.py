@@ -116,3 +116,27 @@ class Buildout(SkeletonSetUp):
         self.assertTrue(os.path.isfile(bin_doc))
         subprocess.call([bin_doc])
         self.assertIn('<html', self.content('build/doc/index.html'))
+
+    def test_sphinx_api_docs_are_updated_with_every_run(self):
+        self.buildout()
+        bin_doc = os.path.join('bin', 'doc')
+        api_txt = open(os.path.join('doc', 'api.txt'), 'w')
+        api_txt.write("""\
+.. autosummary::
+    :toctree: ./
+
+    gocept.example.foo
+""")
+        api_txt.close()
+        foo_py = open(os.path.join('src', 'gocept', 'example', 'foo.py'), 'w')
+        foo_py.write('"""First version of this doc string."""')
+        foo_py.close()
+        subprocess.call([bin_doc])
+        self.assertIn('First version',
+                      self.content('build/doc/gocept.example.foo.html'))
+        foo_py = open(os.path.join('src', 'gocept', 'example', 'foo.py'), 'w')
+        foo_py.write('"""Second version of this doc string."""')
+        foo_py.close()
+        subprocess.call([bin_doc])
+        self.assertIn('Second version',
+                      self.content('build/doc/gocept.example.foo.html'))
