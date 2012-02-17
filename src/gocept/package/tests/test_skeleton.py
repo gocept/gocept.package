@@ -2,6 +2,7 @@
 # See also LICENSE.txt
 
 import datetime
+import gocept.package
 import gocept.package.doc
 import os
 import os.path
@@ -76,9 +77,42 @@ class Buildout(SkeletonSetUp):
         self.expand_template()
         os.chdir('gocept.example')
 
+    @property
+    def gocept_package_dev(self):
+        path = gocept.package.__file__
+        for _ in xrange(4):
+            path = os.path.dirname(path)
+        return path
+
+    def buildout(self):
+        subprocess.call([sys.executable, 'bootstrap.py'])
+        return subprocess.call([
+                os.path.join('bin', 'buildout'),
+                'buildout:develop+=%s' % self.gocept_package_dev])
+
     def test_bootstrap_succeeds_using_distribute_by_default(self):
         subprocess.call([sys.executable, 'bootstrap.py'])
         bin_buildout = self.content('bin/buildout')
         self.assertIn(sys.executable, bin_buildout)
         self.assertIn('distribute-', bin_buildout)
         self.assertNotIn('setuptools-', bin_buildout)
+
+    def test_buildout_succeeds(self):
+        status = self.buildout()
+        self.assertEqual(0, status)
+        self.assertEqual(
+            ['buildout', 'doc', 'test'], sorted(os.listdir('bin')))
+
+    def test_tests_succeed(self):
+        self.buildout()
+        bin_test = os.path.join('bin', 'test')
+        self.assertTrue(os.path.isfile(bin_test))
+        status = subprocess.call([bin_test])
+        self.assertEqual(0, status)
+
+    def test_sphinx_docs_can_be_built(self):
+        self.buildout()
+        bin_doc = os.path.join('bin', 'doc')
+        self.assertTrue(os.path.isfile(bin_doc))
+        subprocess.call([bin_doc])
+        self.assertIn('<html', self.content('build/doc/index.html'))
