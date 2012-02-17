@@ -43,7 +43,10 @@ def set_defaults(egg=True):
 
     autosummary_generate = ['api.txt']
 
-    templates_path = ['_templates']
+    templates_path = [
+        pkg_resources.resource_filename(
+            'gocept.package', 'themes/gocept/templates'),
+        ]
 
     html_theme_path = [
         pkg_resources.resource_filename('gocept.package', 'themes')]
