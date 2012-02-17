@@ -5,7 +5,6 @@ bin
 build
 develop-eggs
 dist
-doc/{{egg}}*
 eggs
 local.cfg
 parts
