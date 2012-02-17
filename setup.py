@@ -44,9 +44,9 @@ setup(
 
     author=('Thomas Lotze <tl at gocept dot com> and '
             'Wolfgang Schnerring <ws at gocept dot com>'),
-    author_email="mail@gocept.com",
-    license="ZPL 2.1",
-    url="https://projects.gocept.com/projects/gocept-package/",
+    author_email='mail@gocept.com',
+    license='ZPL 2.1',
+    url='https://projects.gocept.com/projects/gocept-package/',
 
     keywords='paste.script paster create template python package sphinx theme',
     classifiers="""\
@@ -68,6 +68,6 @@ Programming Language :: Python :: 2 :: Only
     packages=find_packages('src'),
     package_dir={'': 'src'},
     include_package_data=True,
-    data_files=[("", glob.glob(project_path("*.txt")))],
+    data_files=[('', glob.glob(project_path('*.txt')))],
     zip_safe=False,
     )
