@@ -3,6 +3,6 @@ API Reference
 =============
 
 .. autosummary::
-    :toctree: ./
+    :toctree: ./_api/
 
 ..  {{egg}}.foo

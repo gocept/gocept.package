@@ -5,6 +5,7 @@ import datetime
 import os.path
 import pkg_resources
 import pkginfo
+import shutil
 import sys
 
 
@@ -42,6 +43,7 @@ def set_defaults(egg=True):
         ]
 
     autosummary_generate = ['api.txt']
+    _autosummary_output = '_api'
 
     templates_path = [
         pkg_resources.resource_filename(
@@ -64,3 +66,18 @@ def set_defaults(egg=True):
     for key, value in locals().items():
         if key not in _confpy:
             _confpy[key] = value
+
+    # We use the autosummary extension to build API docs from source code.
+    # However, this extension doesn't update the generated docs if the source
+    # files change. Therefore, we need to remove the generated stuff before
+    # each run. The _autosummary_output variable tells the relative path to
+    # the directory that autosummary uses to put its generated files and which
+    # we, therefore, need to remove. It must be the same that the autosummary
+    # directive in api.txt points to.
+
+    if os.path.isdir(_autosummary_output):
+        shutil.rmtree(_autosummary_output)
+    elif os.path.exists(_autosummary_output):
+        raise RuntimeError('Expected %s to be a directory.' %
+                           os.path.abspath(_autosummary_output))
+    os.mkdir(_autosummary_output)
