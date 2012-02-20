@@ -1,7 +1,7 @@
 # Copyright (c) 2012 gocept gmbh & co. kg
 # See also LICENSE.txt
 
-"""gocept Python package conventions
+"""A paste.script template following gocept Python package conventions.
 """
 
 from setuptools import setup, find_packages
@@ -50,6 +50,9 @@ setup(
 
     keywords='paste.script paster create template python package sphinx theme',
     classifiers="""\
+Environment :: Plugins
+Framework :: Paste
+Intended Audience :: Developers
 License :: OSI Approved :: Zope Public License
 Programming Language :: Python
 Programming Language :: Python :: 2
