@@ -30,7 +30,7 @@ class SkeletonSetUp(unittest.TestCase):
     def expand_template(self):
         try:
             paste.script.command.run(
-                'create -t gocept_package gocept.example'.split() + [
+                'create -t gocept-package gocept.example'.split() + [
                     'description="An example package." ',
                     'keywords="example package"',
                     ])
