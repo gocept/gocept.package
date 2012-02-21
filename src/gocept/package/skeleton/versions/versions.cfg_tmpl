@@ -4,7 +4,6 @@ versions = versions
 
 [versions]
 Sphinx = ${versions:sphinx}
-distribute = 0.6.24
 gocept.package = {{gocept_package_version}}
 pkginfo = 0.8
 sphinx = 1.1.2
