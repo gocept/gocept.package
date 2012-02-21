@@ -13,6 +13,7 @@ creates the boilerplate for a Python package in the first place.
 Usage
 =====
 
+    $ paster create --template gocept-package NAMESPACE.PROJECTNAME
 To use the Sphinx configuration, add a zc.buildout section like this::
 
     [doc]
@@ -33,7 +34,6 @@ Also, there needs to exists a Sphinx configuration file at doc/conf.py::
 To make the paster template available, install gocept.package where paster can
 find it (ignoring the doc extra). Then run paster::
 
-    $ paster create --template gocept_package NAMESPACE.PROJECTNAME
 
 The template will generate buildout.cfg and doc/conf.py files as above.
 

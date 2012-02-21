@@ -38,7 +38,7 @@ setup(
             'doc=gocept.package.doc:main',
             ],
         'paste.paster_create_template': [
-            'gocept_package = gocept.package.skeleton:Skeleton'
+            'gocept-package = gocept.package.skeleton:Skeleton'
             ],
         },
 
