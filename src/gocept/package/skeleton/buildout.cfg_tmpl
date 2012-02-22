@@ -10,6 +10,7 @@ allow-picked-versions = false
 recipe = zc.recipe.egg
 eggs = gocept.package [doc]
        {{egg}}
+scripts = doc
 
 [test]
 recipe = zc.recipe.testrunner
