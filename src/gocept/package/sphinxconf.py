@@ -9,6 +9,9 @@ import shutil
 import sys
 
 
+AUTOSUMMARY_OUTPUT = './_api/'
+
+
 def set_defaults(egg=True):
     _confpy = sys._getframe(1).f_locals
 
@@ -43,7 +46,7 @@ def set_defaults(egg=True):
         ]
 
     autosummary_generate = ['api.txt']
-    _autosummary_output = '_api'
+    _autosummary_output = AUTOSUMMARY_OUTPUT
 
     templates_path = [
         pkg_resources.resource_filename(
