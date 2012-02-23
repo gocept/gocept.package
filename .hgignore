@@ -6,4 +6,5 @@ develop-eggs
 dist
 eggs
 .installed.cfg
+local.cfg
 parts
