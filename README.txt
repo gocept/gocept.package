@@ -204,19 +204,19 @@ Sphinx configuration values
 
 You can override the defaults from gocept.package by simply setting the
 respective variables in your conf.py. The invocation of
-``gocept.package.sphinxconf`` needs to happen at the end::
+``gocept.package.sphinxconf.set_defaults`` needs to happen at the end::
 
     source_suffix = '.foo'
 
     import gocept.package.sphinxconf
     gocept.package.sphinxconf.set_defaults()
 
-Conversely, sphinxconf uses some variables from conf.py (if present) to
-calculate some values:
+Conversely, sphinxconf tries to use variables from ``conf.py`` to calculate
+values. If these variables are specified, that must also be done before
+``set_defaults`` is called. Currently, there is only one such variable:
 
 :_year_started:
-    If different from the current year, used to set a copyright notice like
-    "2001-2012 Author"
-
-Note that both kinds of variables need to be set _before_ calling
-``set_defaults()``.
+    Optional value for the year the project was started. This defaults to the
+    current year (at the time of documentation building), but if it is
+    specified and different from the current year, it is used to construct a
+    copyright notice like "2001-2012 Author".
