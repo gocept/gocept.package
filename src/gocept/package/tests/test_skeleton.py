@@ -76,6 +76,17 @@ class Skeleton(SkeletonSetUp):
         gocept.package.doc.main(['doc'])
         self.assertIn('<html', self.content('build/doc/index.html'))
 
+    def test_project_links_are_fully_expanded_in_sphinx_sidebar(self):
+        self.expand_template()
+        os.chdir('gocept.example')
+        gocept.package.doc.main(['doc'])
+        self.assertIn(
+            '<a href="https://projects.gocept.com/projects/gocept-example/">Project home</a>',
+            self.content('build/doc/index.html'))
+        self.assertIn(
+            '<a href="http://pypi.python.org/pypi/gocept.example/">PyPI</a>',
+            self.content('build/doc/index.html'))
+
 
 class Buildout(SkeletonSetUp):
 

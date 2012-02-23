@@ -57,9 +57,17 @@ def set_defaults(egg=True):
         pkg_resources.resource_filename('gocept.package', 'themes')]
     html_theme = 'gocept'
 
+    _default_sidebars = ['globaltoc.html', 'searchbox.html']
+    if egg:
+        _default_sidebars.insert(0, 'project-links.html')
     html_sidebars = {
-        '**': ['project-links.html', 'globaltoc.html', 'searchbox.html']
+        '**': _default_sidebars,
     }
+
+    html_context = {}
+    if egg:
+        html_context.update(redmine_id='-'.join(project.split('.')))
+
     html_logo = pkg_resources.resource_filename(
         'gocept.package', 'themes/gocept/static/gocept.png')
     html_favicon = pkg_resources.resource_filename(
