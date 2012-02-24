@@ -1,7 +1,8 @@
-Changelog
-=========
+=============================
+Change log for gocept.package
+=============================
 
 0.1 (unreleased)
-----------------
+================
 
-- first release.
+initial release
