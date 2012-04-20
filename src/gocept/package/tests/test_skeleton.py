@@ -87,6 +87,10 @@ class Skeleton(SkeletonSetUp):
             '<a href="http://pypi.python.org/pypi/gocept.example/">PyPI</a>',
             self.content('build/doc/index.html'))
 
+    def test_coveragerc_is_renamed_with_dot(self):
+        self.expand_template()
+        self.assertIn('source = gocept.example', self.content('.coveragerc'))
+
 
 class Buildout(SkeletonSetUp):
 

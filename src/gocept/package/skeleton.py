@@ -47,3 +47,6 @@ class Skeleton(paste.script.templates.Template):
         subprocess.call(['hg', 'init', output_dir])
         shutil.move(os.path.join(output_dir, 'hgrc'),
                     os.path.join(output_dir, '.hg'))
+
+        os.rename(os.path.join(output_dir, 'coveragerc'),
+                  os.path.join(output_dir, '.coveragerc'))
