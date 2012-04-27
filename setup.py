@@ -25,7 +25,7 @@ setup(
     extras_require={
         'doc': [
             'Sphinx>=1.0',
-            'pkginfo',
+            'pkginfo>=0.9',
             ],
         'test': [
             'gocept.testing',

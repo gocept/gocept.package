@@ -7,7 +7,7 @@ import os
 import os.path
 import paste.script.templates
 import paste.util.template
-import pkg_resources
+import pkginfo
 import shutil
 import subprocess
 
@@ -32,7 +32,7 @@ class Skeleton(paste.script.templates.Template):
 
     def pre(self, command, output_dir, vars):
         namespace, package = vars['egg'].split('.')
-        gocept_package = pkg_resources.get_distribution('gocept.package')
+        gocept_package = pkginfo.Installed('gocept.package')
         vars.update(
             namespace=namespace,
             package=package,

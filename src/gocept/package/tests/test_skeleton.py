@@ -8,7 +8,7 @@ import gocept.package.sphinxconf
 import os
 import os.path
 import paste.script.command
-import pkg_resources
+import pkginfo
 import shutil
 import subprocess
 import sys
@@ -56,7 +56,7 @@ class Skeleton(SkeletonSetUp):
 
     def test_package_has_gocept_package_version_pinned_to_active(self):
         self.expand_template()
-        gocept_package = pkg_resources.get_distribution('gocept.package')
+        gocept_package = pkginfo.Installed('gocept.package')
         self.assertIn('gocept.package = %s\n' % gocept_package.version,
                       self.content('versions/versions.cfg'))
 
