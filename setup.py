@@ -20,12 +20,12 @@ setup(
     install_requires=[
         'PasteScript',
         'distribute',
+        'pkginfo>=0.9',
         ],
 
     extras_require={
         'doc': [
             'Sphinx>=1.0',
-            'pkginfo>=0.9',
             ],
         'test': [
             'gocept.testing',
