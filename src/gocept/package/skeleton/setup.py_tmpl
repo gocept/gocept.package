@@ -29,6 +29,9 @@ setup(
         },
 
     entry_points={
+        'console_scripts': [
+            # 'binary-name = {{egg}}.module:function'
+            ],
         },
 
     author='gocept <mail@gocept.com>',
