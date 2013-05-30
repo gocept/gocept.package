@@ -12,7 +12,7 @@ Developing gocept.package
     https://projects.gocept.com/projects/gocept-package/
 
 :Source code:
-    https://code.gocept.com/hg/public/gocept.package/
+    https://bitbucket.org/gocept/gocept.package/
 
 :Current change log:
-    https://code.gocept.com/hg/public/gocept.package/raw-file/tip/CHANGES.txt
+    https://bitbucket.org/gocept/gocept.package/raw-file/tip/CHANGES.txt

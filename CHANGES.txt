@@ -7,7 +7,10 @@ Change log for gocept.package
 
 - Use pkginfo >= 0.9 which contains a fix for finding metadata of installed
   namespace packages (see <https://bugs.launchpad.net/pkginfo/+bug/934311>).
+
 - Add example stanza for a console_script entrypoint to the skeleton setup.py.
+
+- Updated Mercurial links to point to bitbucket.org.
 
 
 1.0.1 (2012-04-20)

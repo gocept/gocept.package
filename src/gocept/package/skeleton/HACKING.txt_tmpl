@@ -15,7 +15,7 @@ Developing {{egg}}
     https://projects.gocept.com/projects/{{namespace}}-{{package}}/
 
 :Source code:
-    https://code.gocept.com/hg/public/{{egg}}/
+    https://bitbucket.org/gocept/{{egg}}/
 
 :Current change log:
-    https://code.gocept.com/hg/public/{{egg}}/raw-file/tip/CHANGES.txt
+    https://bitbucket.org/gocept/{{egg}}/raw-file/tip/CHANGES.txt
