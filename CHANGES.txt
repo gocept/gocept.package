@@ -14,6 +14,8 @@ Change log for gocept.package
 
 - Updated link to online docs to point to pythonhosted.org.
 
+- Updated ZTK to 1.1.5.
+
 
 1.0.1 (2012-04-20)
 ==================

@@ -1,5 +1,5 @@
 [buildout]
-extends = ztk-versions-1.1.4.cfg
+extends = ztk-versions-1.1.5.cfg
 versions = versions
 
 [versions]
