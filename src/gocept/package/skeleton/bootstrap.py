@@ -20,6 +20,11 @@ use the -c option to specify an alternate configuration file.
 $Id$
 """
 
+
+BUILDOUT_VERSION = "1.7.1"
+DISTRIBUTE_VERSION = "0.6.45"
+
+
 import os, shutil, sys, tempfile, urllib2
 from optparse import OptionParser
 
@@ -29,7 +34,7 @@ is_jython = sys.platform.startswith('java')
 
 # parsing arguments
 parser = OptionParser()
-parser.add_option("-v", "--version", dest="version",
+parser.add_option("-v", "--version", dest="version", default=BUILDOUT_VERSION,
                           help="use a specific zc.buildout version")
 parser.add_option("-d", "--distribute",
                    action="store_true", dest="distribute", default=True,
@@ -89,7 +94,7 @@ cmd = 'from setuptools.command.easy_install import main; main()'
 ws  = pkg_resources.working_set
 
 if USE_DISTRIBUTE:
-    requirement = 'distribute'
+    requirement = 'distribute==%s' % DISTRIBUTE_VERSION
 else:
     requirement = 'setuptools'
 
