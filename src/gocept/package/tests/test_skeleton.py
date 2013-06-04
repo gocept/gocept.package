@@ -1,10 +1,11 @@
-# Copyright (c) 2012 gocept gmbh & co. kg
+# Copyright (c) 2012-2013 gocept gmbh & co. kg
 # See also LICENSE.txt
 
 import datetime
 import gocept.package
 import gocept.package.doc
 import gocept.package.sphinxconf
+import gocept.testing.assertion
 import os
 import os.path
 import paste.script.command
@@ -45,7 +46,7 @@ class SkeletonSetUp(unittest.TestCase):
         return open(file_path).read()
 
 
-class Skeleton(SkeletonSetUp):
+class Skeleton(SkeletonSetUp, gocept.testing.assertion.Ellipsis):
 
     def test_expanding_template_creates_files(self):
         self.expand_template()
@@ -80,8 +81,8 @@ class Skeleton(SkeletonSetUp):
         self.expand_template()
         os.chdir('gocept.example')
         gocept.package.doc.main(['doc'])
-        self.assertIn(
-            '<a href="https://projects.gocept.com/projects/gocept-example/">Project home</a>',
+        self.assertEllipsis(
+            '...<a href="https://bitbucket.org/gocept/gocept.example/">Project home</a>...',
             self.content('build/doc/index.html'))
         self.assertIn(
             '<a href="http://pypi.python.org/pypi/gocept.example/">PyPI</a>',

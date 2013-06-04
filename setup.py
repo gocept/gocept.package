@@ -46,7 +46,7 @@ setup(
             'Wolfgang Schnerring <ws at gocept dot com>'),
     author_email='mail@gocept.com',
     license='ZPL 2.1',
-    url='https://projects.gocept.com/projects/gocept-package/',
+    url='https://bitbucket.org/gocept/gocept.package/',
 
     keywords='paste.script paster create template python package sphinx theme',
     classifiers="""\

@@ -1,4 +1,4 @@
-# Copyright (c) 2012 gocept gmbh & co. kg
+# Copyright (c) 2012-2013 gocept gmbh & co. kg
 # See also LICENSE.txt
 
 import datetime
@@ -65,8 +65,6 @@ def set_defaults(egg=True):
     }
 
     html_context = {}
-    if egg:
-        html_context.update(redmine_id='-'.join(project.split('.')))
 
     html_logo = pkg_resources.resource_filename(
         'gocept.package', 'themes/gocept/static/gocept.png')

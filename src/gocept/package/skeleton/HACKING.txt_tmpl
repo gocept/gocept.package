@@ -11,8 +11,8 @@ Developing {{egg}}
 :PyPI page:
     http://pypi.python.org/pypi/{{egg}}/
 
-:Issue tracker:
-    https://projects.gocept.com/projects/{{namespace}}-{{package}}/
+:Issues:
+    `report by e-mail <mail@gocept.com>`_
 
 :Source code:
     https://bitbucket.org/gocept/{{egg}}/
