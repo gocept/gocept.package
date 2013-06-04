@@ -14,7 +14,12 @@ Change log for gocept.package
 
 - Updated link to online docs to point to pythonhosted.org.
 
-- Updated ZTK to 1.1.5.
+- Updated home page and issue reporting to remove outdated assumptions about
+  gocept's project hosting.
+
+- Updated ZTK to 1.1.5, zc.buildout to 1.7.1.
+
+- Pin zc.buildout and distribute during bootstrap.
 
 
 1.0.1 (2012-04-20)
