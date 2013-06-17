@@ -1,6 +1,7 @@
 syntax: glob
 
 .installed.cfg
+.mr.developer.cfg
 bin
 build
 develop-eggs
