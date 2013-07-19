@@ -7,6 +7,9 @@ Change log for gocept.package
 
 - Added .mr.developer.cfg to the skeleton's .hgignore file.
 
+- Development buildout is now required to run in a Python environment that has
+  setuptools available.
+
 - Updated package versions.
 
 
