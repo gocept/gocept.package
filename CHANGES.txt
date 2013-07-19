@@ -7,6 +7,8 @@ Change log for gocept.package
 
 - Added .mr.developer.cfg to the skeleton's .hgignore file.
 
+- Updated package versions.
+
 
 1.1 (2013-06-04)
 ================
