@@ -10,6 +10,9 @@ Change log for gocept.package
 - Development buildout is now required to run in a Python environment that has
   setuptools available.
 
+- Use zc.buildout 2.x and current setuptools instead of distribute in response
+  to the setuptools merge.
+
 - Updated package versions.
 
 

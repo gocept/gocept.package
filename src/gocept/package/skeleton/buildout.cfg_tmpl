@@ -13,5 +13,10 @@ eggs = gocept.package [doc]
 scripts = doc
 
 [test]
-recipe = zc.recipe.testrunner
-eggs = {{egg}} [test]
+recipe = zc.recipe.egg
+scripts =
+    zope-testrunner=test
+eggs =
+    {{egg}} [test]
+    zope.testrunner
+arguments = ['--test-path', '${buildout:directory}/src']

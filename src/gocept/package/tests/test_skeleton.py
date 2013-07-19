@@ -115,12 +115,12 @@ class Buildout(SkeletonSetUp):
                 os.path.join('bin', 'buildout'),
                 'buildout:develop+=%s' % self.gocept_package_dev])
 
-    def test_bootstrap_succeeds_using_distribute_by_default(self):
+    def test_bootstrap_succeeds_using_setuptools(self):
         subprocess.call([sys.executable, 'bootstrap.py'])
         bin_buildout = self.content('bin/buildout')
         self.assertIn(sys.executable, bin_buildout)
-        self.assertIn('distribute-', bin_buildout)
-        self.assertNotIn('setuptools-', bin_buildout)
+        self.assertNotIn('distribute-', bin_buildout)
+        self.assertIn('setuptools-', bin_buildout)
 
     def test_buildout_succeeds(self):
         status = self.buildout()

@@ -1,4 +1,4 @@
-# Copyright (c) 2012 gocept gmbh & co. kg
+# Copyright (c) 2012-2013 gocept gmbh & co. kg
 # See also LICENSE.txt
 
 """A paste.script template following gocept Python package conventions.
@@ -19,8 +19,8 @@ setup(
 
     install_requires=[
         'PasteScript',
-        'distribute',
         'pkginfo>=0.9',
+        'setuptools',
         ],
 
     extras_require={
