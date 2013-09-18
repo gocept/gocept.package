@@ -14,9 +14,7 @@ scripts = doc
 
 [test]
 recipe = zc.recipe.egg
-scripts =
-    zope-testrunner=test
+scripts = py.test=test
 eggs =
     {{egg}} [test]
-    zope.testrunner
-arguments = ['--test-path', '${buildout:directory}/src']
+    pytest

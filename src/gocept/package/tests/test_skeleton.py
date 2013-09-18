@@ -95,8 +95,6 @@ class Skeleton(SkeletonSetUp, gocept.testing.assertion.Ellipsis):
 
 class Buildout(SkeletonSetUp):
 
-    level = 2
-
     def setUp(self):
         super(Buildout, self).setUp()
         self.expand_template()
