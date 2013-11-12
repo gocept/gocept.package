@@ -38,7 +38,8 @@ setup(
             'doc=gocept.package.doc:main',
             ],
         'paste.paster_create_template': [
-            'gocept-package = gocept.package.skeleton:Skeleton'
+            'gocept-package = gocept.package.skeleton:PackageSkeleton',
+            'gocept-webapp = gocept.package.skeleton:WebAppDeploymentSkeleton',
             ],
         },
 
@@ -48,7 +49,8 @@ setup(
     license='ZPL 2.1',
     url='https://bitbucket.org/gocept/gocept.package/',
 
-    keywords='paste.script paster create template python package sphinx theme',
+    keywords='paste.script paster create template python package sphinx theme'
+             'deployment batou webapp',
     classifiers="""\
 Environment :: Plugins
 Framework :: Paste
