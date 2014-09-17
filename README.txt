@@ -205,9 +205,13 @@ Building the full documentation
 The generated buildout configuration installs a script at ``bin/doc`` that
 calls Sphinx to build the documentation. To run this script, your current
 working directory must be the package root. The script will put the built
-documentation into ``build/doc/`` (relative to the package's top-level
-directory). Options passed to ``bin/doc`` will be passed on to the underlying
-``sphinx-build`` command, but note that positional arguments won't work.
+documentation (HTML format) into ``build/doc/`` (relative to the package's
+top-level directory). Options passed to ``bin/doc`` will be passed on to the
+underlying ``sphinx-build`` command, but note that positional arguments won't
+work.
+
+As an alternative to the default HTML output, ``bin/doc --pdf`` generates PDF
+output in ``build/pdf`` (via Sphinx' latex toolchain).
 
 
 Sphinx configuration values
