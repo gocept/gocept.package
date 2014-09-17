@@ -2,7 +2,7 @@
 Change log for gocept.package
 =============================
 
-1.3 (unreleased)
+1.3 (2014-09-17)
 ================
 
 - Add ``--pdf`` option to the ``bin/doc`` command.
