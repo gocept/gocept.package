@@ -2,6 +2,12 @@
 Change log for gocept.package
 =============================
 
+1.4 (unreleased)
+================
+
+- Nothing changed yet.
+
+
 1.3 (2014-09-17)
 ================
 
