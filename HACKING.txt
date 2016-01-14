@@ -15,4 +15,4 @@ Developing gocept.package
     https://bitbucket.org/gocept/gocept.package/
 
 :Current change log:
-    https://bitbucket.org/gocept/gocept.package/raw-file/tip/CHANGES.txt
+    https://bitbucket.org/gocept/gocept.package/raw/tip/CHANGES.txt
