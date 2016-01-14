@@ -1,6 +1,3 @@
-# Copyright (c) 2012-2013 gocept gmbh & co. kg
-# See also LICENSE.txt
-
 """A paste.script template following gocept Python package conventions.
 """
 
@@ -43,8 +40,7 @@ setup(
             ],
         },
 
-    author=('Thomas Lotze <tl at gocept dot com> and '
-            'Wolfgang Schnerring <ws at gocept dot com>'),
+    author='gocept <mail@gocept.com>',
     author_email='mail@gocept.com',
     license='ZPL 2.1',
     url='https://bitbucket.org/gocept/gocept.package/',
