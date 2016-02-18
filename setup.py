@@ -12,7 +12,7 @@ def project_path(*names):
 
 setup(
     name='gocept.package',
-    version='1.4.dev0',
+    version='2.0.dev0',
 
     install_requires=[
         'PasteScript',
@@ -26,7 +26,6 @@ setup(
             ],
         'test': [
             'gocept.testing',
-            'unittest2',
             ],
         },
 
@@ -54,7 +53,6 @@ Intended Audience :: Developers
 License :: OSI Approved :: Zope Public License
 Programming Language :: Python
 Programming Language :: Python :: 2
-Programming Language :: Python :: 2.6
 Programming Language :: Python :: 2.7
 Programming Language :: Python :: 2 :: Only
 """[:-1].split('\n'),

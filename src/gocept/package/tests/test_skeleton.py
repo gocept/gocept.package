@@ -1,6 +1,3 @@
-# Copyright (c) 2012-2013 gocept gmbh & co. kg
-# See also LICENSE.txt
-
 import datetime
 import gocept.package
 import gocept.package.doc
@@ -15,7 +12,7 @@ import subprocess
 import sys
 import tempfile
 import time
-import unittest2 as unittest
+import unittest
 
 
 class SkeletonSetUp(unittest.TestCase):

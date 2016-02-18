@@ -8,7 +8,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
-import unittest2 as unittest
+import unittest
 
 
 class DocBuildEndtoend(unittest.TestCase, gocept.testing.assertion.Ellipsis):
