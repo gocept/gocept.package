@@ -2,7 +2,7 @@
 Change log for gocept.package
 =============================
 
-2.0 (unreleased)
+2.0 (2016-02-18)
 ================
 
 - Updated bitbucket URLs of current changelog files.

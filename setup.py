@@ -12,7 +12,7 @@ def project_path(*names):
 
 setup(
     name='gocept.package',
-    version='2.0.dev0',
+    version='2.0',
 
     install_requires=[
         'PasteScript',
