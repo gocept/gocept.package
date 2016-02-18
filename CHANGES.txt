@@ -9,6 +9,8 @@ Change log for gocept.package
 
 - Drop support for Python 2.6.
 
+- Support Python 3.3, 3.4, 3.5.
+
 - Use tox as one and only testrunner.
 
 - Update to Sphinx >= 1.3.

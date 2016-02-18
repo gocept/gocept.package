@@ -100,7 +100,7 @@ class Buildout(SkeletonSetUp):
     @property
     def gocept_package_dev(self):
         path = gocept.package.__file__
-        for _ in xrange(4):
+        for _ in range(4):
             path = os.path.dirname(path)
         return path
 

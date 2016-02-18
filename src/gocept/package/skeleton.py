@@ -74,6 +74,6 @@ class WebAppDeploymentSkeleton(Skeleton):
 
     def post(self, command, output_dir, vars):
         super(WebAppDeploymentSkeleton, self).post(command, output_dir, vars)
-        os.chmod(os.path.join(output_dir, 'batou'), 0775)
+        os.chmod(os.path.join(output_dir, 'batou'), 0o775)
         for name in os.listdir(os.path.join(output_dir, 'bin')):
-            os.chmod(os.path.join(output_dir, 'bin', name), 0775)
+            os.chmod(os.path.join(output_dir, 'bin', name), 0o775)
