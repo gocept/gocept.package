@@ -105,7 +105,16 @@ class Buildout(SkeletonSetUp):
         return path
 
     def buildout(self):
-        subprocess.call([sys.executable, 'bootstrap.py'])
+        subprocess.call([
+            sys.executable,
+            '-m',
+            'virtualenv',
+            '--python=python{0.major}.{0.minor}'.format(sys.version_info),
+            'venv'])
+
+        subprocess.call([
+            os.path.join('venv', 'bin', 'python'),
+            'bootstrap.py'])
         return subprocess.call([
                 os.path.join('bin', 'buildout'),
                 'buildout:develop+=%s' % self.gocept_package_dev])

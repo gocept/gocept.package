@@ -5,10 +5,10 @@ versions = versions
 [versions]
 Sphinx = ${versions:sphinx}
 gocept.package = {{gocept_package_version}}
-pkginfo = 1.0
-py = 1.4.15
-pytest = 2.3.5
-setuptools = 0.9.5
+pkginfo = 1.2.1
+py = 1.4.31
+pytest = 2.8.7
+setuptools = 19.6.2
 sphinx = 1.1.2
-zc.buildout = 2.2.0
-zc.recipe.egg = 2.0.0
+zc.buildout = 2.5.0
+zc.recipe.egg = 2.0.3
