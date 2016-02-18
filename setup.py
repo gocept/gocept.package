@@ -22,7 +22,7 @@ setup(
 
     extras_require={
         'doc': [
-            'Sphinx>=1.0',
+            'Sphinx>=1.3',
             ],
         'test': [
             'gocept.testing',

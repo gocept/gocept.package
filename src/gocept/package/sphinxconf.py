@@ -42,6 +42,7 @@ def set_defaults(egg=True):
     needs_sphinx = '1.0'
     extensions = [
         'sphinx.ext.autosummary',
+        'sphinx.ext.autodoc',
         'sphinx.ext.viewcode',
         ]
 

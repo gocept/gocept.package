@@ -21,6 +21,11 @@ def main(argv=sys.argv):
     source_dir = os.path.join(cwd, 'doc')
     output_dir = os.path.join(cwd, 'build', output_dir)
     argv += ['-E', '-b', builder, source_dir, output_dir]
-    sphinx_build(argv)
+    try:
+        sphinx_build(argv)
+    except SystemExit as e:
+        if e.code != 0:
+            raise e
+
     if builder == 'latex':
         os.system('make -C %s all-pdf' % output_dir)
