@@ -106,10 +106,11 @@ class Buildout(SkeletonSetUp):
 
     def buildout(self):
         subprocess.call([
-            sys.executable,
-            '-m',
-            'virtualenv',
+            os.path.join(os.path.dirname(sys.executable), 'virtualenv'),
             '--python=python{0.major}.{0.minor}'.format(sys.version_info),
+            '--no-setuptools',
+            '--no-pip',
+            '--no-wheel',
             'venv'])
 
         subprocess.call([

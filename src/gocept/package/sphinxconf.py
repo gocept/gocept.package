@@ -70,7 +70,7 @@ def set_defaults(egg=True):
         'gocept.package', 'themes/gocept/static/favicon.ico')
     html_show_sourcelink = False
 
-    for key, value in locals().items():
+    for key, value in locals().copy().items():
         if key not in _confpy:
             _confpy[key] = value
 
