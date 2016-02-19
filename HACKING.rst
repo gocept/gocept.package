@@ -9,7 +9,7 @@ Developing gocept.package
     http://pypi.python.org/pypi/gocept.package/
 
 :Issues:
-    `report by e-mail <mail@gocept.com>`_
+    https://bitbucket.org/gocept/gocept.package/issues
 
 :Source code:
     https://bitbucket.org/gocept/gocept.package/
