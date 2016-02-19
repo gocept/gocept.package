@@ -1,5 +1,4 @@
-"""A paste.script template following gocept Python package conventions.
-"""
+"""A paste.script template following gocept Python package conventions."""
 
 from setuptools import setup, find_packages
 import glob
@@ -7,6 +6,7 @@ import os.path
 
 
 def project_path(*names):
+    """Path to the project."""
     return os.path.join(os.path.dirname(__file__), *names)
 
 
@@ -18,26 +18,26 @@ setup(
         'PasteScript',
         'pkginfo>=0.9',
         'setuptools',
-        ],
+    ],
 
     extras_require={
         'doc': [
             'Sphinx>=1.3',
-            ],
+        ],
         'test': [
             'gocept.testing',
-            ],
-        },
+        ],
+    },
 
     entry_points={
         'console_scripts': [
             'doc=gocept.package.doc:main',
-            ],
+        ],
         'paste.paster_create_template': [
             'gocept-package = gocept.package.skeleton:PackageSkeleton',
             'gocept-webapp = gocept.package.skeleton:WebAppDeploymentSkeleton',
-            ],
-        },
+        ],
+    },
 
     author='gocept <mail@gocept.com>',
     author_email='mail@gocept.com',
@@ -58,10 +58,10 @@ Programming Language :: Python :: 2 :: Only
 """[:-1].split('\n'),
     description=__doc__.strip(),
     long_description='\n\n'.join(open(project_path(name)).read() for name in (
-            )),
         'README.rst',
         'HACKING.rst',
         'CHANGES.rst',
+    )),
 
     namespace_packages=['gocept'],
     packages=find_packages('src'),
@@ -69,4 +69,4 @@ Programming Language :: Python :: 2 :: Only
     include_package_data=True,
     data_files=[('', glob.glob(project_path('*.txt')))],
     zip_safe=False,
-    )
+)

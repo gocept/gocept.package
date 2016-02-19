@@ -116,8 +116,8 @@ class Buildout(SkeletonSetUp):
             os.path.join('venv', 'bin', 'python'),
             'bootstrap.py'])
         return subprocess.call([
-                os.path.join('bin', 'buildout'),
-                'buildout:develop+=%s' % self.gocept_package_dev])
+            os.path.join('bin', 'buildout'),
+            'buildout:develop+=%s' % self.gocept_package_dev])
 
     @unittest.skip('Rewrite the algorithm for determining the eggs used.')
     def test_bootstrap_succeeds_using_setuptools(self):

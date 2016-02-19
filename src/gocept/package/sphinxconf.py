@@ -1,6 +1,3 @@
-# Copyright (c) 2012-2013 gocept gmbh & co. kg
-# See also LICENSE.txt
-
 import datetime
 import os.path
 import pkg_resources
@@ -44,7 +41,7 @@ def set_defaults(egg=True):
         'sphinx.ext.autosummary',
         'sphinx.ext.autodoc',
         'sphinx.ext.viewcode',
-        ]
+    ]
 
     autosummary_generate = ['api.txt']
     _autosummary_output = AUTOSUMMARY_OUTPUT
@@ -52,7 +49,7 @@ def set_defaults(egg=True):
     templates_path = [
         pkg_resources.resource_filename(
             'gocept.package', 'themes/gocept/templates'),
-        ]
+    ]
 
     html_theme_path = [
         pkg_resources.resource_filename('gocept.package', 'themes')]
