@@ -2,7 +2,7 @@
 Change log for gocept.package
 =============================
 
-2.1 (unreleased)
+2.1 (2016-02-19)
 ================
 
 - Use current `bootstrap.py` in the skeleton.
