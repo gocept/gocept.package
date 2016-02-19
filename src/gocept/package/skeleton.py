@@ -1,6 +1,3 @@
-# Copyright (c) 2012-2013 gocept gmbh & co. kg
-# See also LICENSE.txt
-
 from paste.script.templates import var
 import datetime
 import os
