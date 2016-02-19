@@ -15,7 +15,7 @@ Developing gocept.package
     https://bitbucket.org/gocept/gocept.package/
 
 :Current change log:
-    https://bitbucket.org/gocept/gocept.package/raw/tip/CHANGES.txt
+    https://bitbucket.org/gocept/gocept.package/raw/tip/CHANGES.rst
 
 :Run tests:
     Use tox, for info see: https://pypi.python.org/pypi/tox

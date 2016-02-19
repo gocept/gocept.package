@@ -71,6 +71,8 @@ Programming Language :: Python :: Implementation :: CPython
     packages=find_packages('src'),
     package_dir={'': 'src'},
     include_package_data=True,
-    data_files=[('', glob.glob(project_path('*.txt')))],
+    data_files=[('',
+                 glob.glob(project_path('*.txt')),
+                 glob.glob(project_path('*.rst')))],
     zip_safe=False,
 )

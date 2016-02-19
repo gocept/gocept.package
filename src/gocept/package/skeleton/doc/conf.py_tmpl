@@ -1,6 +1,3 @@
-# Copyright (c) {{year}} gocept gmbh & co. kg
-# See also LICENSE.txt
-
 _year_started = {{year}}
 
 import gocept.package.sphinxconf

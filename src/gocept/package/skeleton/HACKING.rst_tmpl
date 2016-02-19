@@ -12,10 +12,10 @@ Developing {{egg}}
     https://pypi.python.org/pypi/{{egg}}
 
 :Issues:
-    `report by e-mail <mail@gocept.com>`_
+    https://bitbucket.org/gocept/{{egg}}/issues
 
 :Source code:
     https://bitbucket.org/gocept/{{egg}}
 
 :Current change log:
-    https://bitbucket.org/gocept/{{egg}}/raw/tip/CHANGES.txt
+    https://bitbucket.org/gocept/{{egg}}/raw/tip/CHANGES.rst

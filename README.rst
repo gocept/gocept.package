@@ -128,19 +128,19 @@ text as they are being processed by Sphinx when building the full
 documentation, except for the copyright notice and license text which are
 included verbatim.
 
-:README.txt:
+:README.rst:
     An overview of the package's purpose, contents and usage which will be
     part of its PyPI page and of the documentation's index page. This should
     be kept up-to-date with the package contents at all times.
 
-:CHANGES.txt:
+:CHANGES.rst:
     The change log that needs to be updated with any changes to the package
     that are relevant to the users of the package. The file's format is
     understood by ``zest.releaser`` and the current version of it (i.e. the
     "tip" version in the public Mercurial repository) will be pointed to from
     the PyPI page and the built package documentation.
 
-:HACKING.txt:
+:HACKING.rst:
     Some pointers about the package and its authors, such as the latter's
     e-mail address and the URLs of the package's documentation, PyPI page,
     issue tracker and source code as well as the current log.
@@ -176,7 +176,7 @@ Full documentation, built using Sphinx
 
 :doc/index.txt:
     The front page of the documentation. It includes the package overview from
-    the top-level ``README.txt`` file and a table of contents pointing to the
+    the top-level ``README.rst`` file and a table of contents pointing to the
     sections of the full documentation. These include generated API
     documentation, some meta information about the package and the change log.
     Edit this file if you want to add top-level sections such as a narrative
@@ -191,11 +191,11 @@ Full documentation, built using Sphinx
 
 :doc/about.txt:
     Meta information about the package, combining the top-level files
-    ``HACKING.txt``, ``COPYRIGHT.txt``, and ``LICENSE.txt``. You will not need
+    ``HACKING.rst``, ``COPYRIGHT.txt``, and ``LICENSE.txt``. You will not need
     to edit this file.
 
 :doc/changes.txt:
-    A stub to include the top-level file ``CHANGES.txt``. No need to edit this
+    A stub to include the top-level file ``CHANGES.rst``. No need to edit this
     file.
 
 
