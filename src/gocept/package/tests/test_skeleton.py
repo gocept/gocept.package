@@ -120,19 +120,6 @@ class Buildout(SkeletonSetUp):
             os.path.join('bin', 'buildout'),
             'buildout:develop+=%s' % self.gocept_package_dev])
 
-    @unittest.skip('Rewrite the algorithm for determining the eggs used.')
-    def test_bootstrap_succeeds_using_setuptools(self):
-        # XXX It is not generally possible to determine whether distribute or
-        # setuptools is being used just by looking at the script file. When
-        # running from a virtualenv, the path listed explicitly may omit
-        # either egg. The real working set of eggs would need to be inspected
-        # - if it's worth the effort in the first place.
-        subprocess.call([sys.executable, 'bootstrap.py'])
-        bin_buildout = self.content('bin/buildout')
-        self.assertIn(sys.executable, bin_buildout)
-        self.assertNotIn('distribute-', bin_buildout)
-        self.assertIn('setuptools-', bin_buildout)
-
     def test_buildout_succeeds(self):
         status = self.buildout()
         self.assertEqual(0, status)
