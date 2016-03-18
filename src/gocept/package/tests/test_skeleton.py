@@ -79,7 +79,8 @@ class Skeleton(SkeletonSetUp, gocept.testing.assertion.Ellipsis):
         os.chdir('gocept.example')
         gocept.package.doc.main(['doc'])
         self.assertEllipsis(
-            '...<a href="https://bitbucket.org/gocept/gocept.example/">Project home</a>...',
+            '...<a href="https://bitbucket.org/gocept/gocept.example/">'
+            'Project home</a>...',
             self.content('build/doc/index.html'))
         self.assertIn(
             '<a href="http://pypi.python.org/pypi/gocept.example/">PyPI</a>',
