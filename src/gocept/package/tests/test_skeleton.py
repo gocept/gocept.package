@@ -32,7 +32,7 @@ class SkeletonSetUp(unittest.TestCase):
                 'create -t gocept-package gocept.example'.split() + [
                     'description="An example package." ',
                     'keywords="example package"',
-                    ])
+                ])
         except SystemExit:
             pass
 
