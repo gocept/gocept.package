@@ -9,6 +9,7 @@ syntax: glob
 bin
 build
 coverage-report
+coverage.xml
 develop-eggs
 dist
 eggs
