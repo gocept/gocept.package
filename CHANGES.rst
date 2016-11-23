@@ -2,7 +2,7 @@
 Change log for gocept.package
 =============================
 
-2.2 (unreleased)
+2.2 (2016-11-23)
 ================
 
 - Support PyPy 2.
