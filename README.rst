@@ -12,7 +12,7 @@ It consists of two parts: a paster template that creates the boilerplate for a
 Python package, and a Python module that is used to configure Sphinx, along
 with the necessary package dependencies.
 
-The package works with Python versions 2.7, 3.3, 3.4 and 3.5.
+The package works with Python versions 2.7, 3.3, 3.4, 3.5 and PyPy 2.
 
 
 Usage
