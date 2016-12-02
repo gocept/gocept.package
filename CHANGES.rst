@@ -2,7 +2,7 @@
 Change log for gocept.package
 =============================
 
-2.3 (unreleased)
+2.3 (2016-12-02)
 ================
 
 - Ensure compatibility with `setuptools > 30.0`.

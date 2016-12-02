@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='gocept.package',
-    version='2.3.dev0',
+    version='2.3',
 
     install_requires=[
         'PasteScript',
