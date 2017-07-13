@@ -7,6 +7,8 @@ Change log for gocept.package
 
 - Drop python 3.3 support as it is no longer supported by Sphinx 1.5.
 
+- Change License to MIT License.
+
 
 2.3 (2016-12-02)
 ================

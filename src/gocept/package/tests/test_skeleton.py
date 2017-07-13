@@ -50,7 +50,7 @@ class Skeleton(SkeletonSetUp, gocept.testing.assertion.Ellipsis):
         self.assertEqual(
             '', self.content('src/gocept/example/tests/__init__.py'))
         self.assertIn(
-            str(datetime.date.today().year), self.content('COPYRIGHT.txt'))
+            str(datetime.date.today().year), self.content('LICENSE.txt'))
 
     def test_package_has_gocept_package_version_pinned_to_active(self):
         self.expand_template()
