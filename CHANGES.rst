@@ -2,7 +2,7 @@
 Change log for gocept.package
 =============================
 
-2.4 (unreleased)
+3.0 (2018-01-25)
 ================
 
 - Drop python 3.3 support as it is no longer supported by Sphinx 1.5.
