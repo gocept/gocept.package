@@ -5,7 +5,7 @@ Change log for gocept.package
 3.1 (unreleased)
 ================
 
-- Nothing changed yet.
+- This package is currently not compatible with Sphinx >= 1.7.
 
 
 3.0 (2018-01-25)
