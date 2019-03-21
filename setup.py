@@ -8,7 +8,7 @@ setup(
     version='3.1.dev0',
 
     install_requires=[
-        'PasteScript',
+        'PasteScript >= 3.1',
         'pkginfo>=0.9',
         'setuptools',
     ],
