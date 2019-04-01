@@ -5,6 +5,9 @@ Change log for gocept.package
 3.1 (unreleased)
 ================
 
+Regression
+----------
+
 - This package is currently not compatible with Sphinx >= 1.7.
 
 
