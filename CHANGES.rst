@@ -2,7 +2,7 @@
 Change log for gocept.package
 =============================
 
-3.1 (unreleased)
+3.1 (2019-04-01)
 ================
 
 Regression
