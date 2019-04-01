@@ -5,6 +5,7 @@ include .coveragerc
 include buildout.cfg
 include pytest.ini
 include tox.ini
+exclude bitbucket-pipelines.yml
 recursive-include src *.cfg
 recursive-include src *.cfg_tmpl
 recursive-include src *.conf
